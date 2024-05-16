@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.home-container {
+  width: 100%;
+  height: 90vh;
+  position: relative; 
+}
+
+.rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.home-inner-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.left-box,
+.right-box {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.left-box {
+  flex: 70%;
+  z-index: inherit;
+}
+
+.left-box img {
+  height: 90%;
+  width: auto;
+}
+
+.right-box {
+  flex: 30%;
+  z-index: inherit;
+}
+
+.right-box img {
+    align-items: flex-start;
+  width: auto;}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-100vh) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(var(--translateX, 0));
+  }
+}
+
+.raindrop {
+  position: absolute;
+  top: -10vh; /* Start off-screen */
+  background: #fff;
+  animation: drop linear infinite;
+}
+
+.layer1 {
+  --translateX: -10px;
+  animation-duration: 10s;
+}
+
+.layer2 {
+  --translateX: -5px;
+  animation-duration: 8s;
+}
+
+.layer3 {
+  --translateX: 5px;
+  animation-duration: 6s;
+}
+
+.layer4 {
+  --translateX: 10px;
+  animation-duration: 4s;
+}
